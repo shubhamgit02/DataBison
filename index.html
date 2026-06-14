@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="DataBison - Privacy-first, zero-trust cybersecurity platform that audits files for sensitive PII, exposed credentials, hidden metadata, and privacy risks before sharing.">
+  <title>DataBison | Zero-Trust File Security & Privacy Audit Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- Cyber Grid Backdrop -->
+  <div class="cyber-grid"></div>
+  <div class="glow-blob glow-blob-1"></div>
+  <div class="glow-blob glow-blob-2"></div>
+
+  <div class="app-container">
+    <!-- Navigation -->
+    <header class="navbar">
+      <a href="#" class="nav-brand" id="brand-logo">
+        <span>🦬 DataBison</span>
+      </a>
+      <ul class="nav-links">
+        <li class="active" id="nav-item-landing"><a onclick="appRouter.navigate('landing')">Landing</a></li>
+        <li id="nav-item-scan"><a onclick="appRouter.navigate('scan')">Scan Dashboard</a></li>
+        <li id="nav-item-about"><a onclick="appRouter.navigate('about')">About</a></li>
+      </ul>
+      <button class="nav-btn" onclick="appRouter.navigate('scan')">Launch Console</button>
+    </header>
+
+    <!-- PAGE 1: LANDING PAGE -->
+    <main id="page-landing" class="page-view active">
+      <section class="hero-section">
+        <div class="hero-content">
+          <div class="hero-tag">
+            <i data-lucide="shield-check" style="width: 14px; height: 14px;"></i> Zero-Trust Scanner
+          </div>
+          <h1 class="hero-title">
+            <span>DataBison</span><br>Protecting Data Before It Leaks
+          </h1>
+          <h2 class="hero-subtitle">Secure Your Files, Strip Privacy Risks</h2>
+          <p class="hero-desc">
+            Instantly detect and strip sensitive PII (emails, phone numbers), exposed API credentials, hidden metadata, and location details in a sandboxed client-side environment. Zero file uploads, absolute privacy.
+          </p>
+          <div class="hero-actions">
+            <button class="btn-primary" onclick="appRouter.navigate('scan')">
+              <i data-lucide="scan"></i> Scan File
+            </button>
+            <button class="btn-secondary" onclick="appRouter.navigate('about')">
+              Learn More
+            </button>
+          </div>
+        </div>
+
+        <div class="hero-illustration">
+          <div class="illustration-box">
+            <div class="illustration-radar"></div>
+            
+            <div class="cyber-scanner">
+    
+    <div class="shield-core">
+        <i data-lucide="shield-check"></i>
+    </div>
+
+    <div class="scan-ring ring-1"></div>
+    <div class="scan-ring ring-2"></div>
+    <div class="scan-ring ring-3"></div>
+
+    <div class="scan-line"></div>
+
+    <div class="data-particle p1"></div>
+    <div class="data-particle p2"></div>
+    <div class="data-particle p3"></div>
+    <div class="data-particle p4"></div>
+
+</div>
+            <div style="font-family: monospace; font-size: 0.75rem; color: var(--cyan-accent); display: flex; justify-content: space-between; z-index: 1;">
+              <span>SYSTEM: ONLINE</span>
+              <span>RISK EXPOSURE: AUDITING</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Feature Section -->
+      <section class="features-container">
+        <div class="section-header">
+          <h2>Core Audit Engine Capabilities</h2>
+          <p>Four specialized detection vectors built to isolate and secure data leakage points before distribution.</p>
+        </div>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">
+              <i data-lucide="user-x"></i>
+            </div>
+            <h3 class="feature-title">Sensitive PII Detection</h3>
+            <p class="feature-desc">Scans for emails, phone numbers, social security numbers, and human identifiable vectors embedded in structural text.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">
+              <i data-lucide="database"></i>
+            </div>
+            <h3 class="feature-title">Hidden Metadata Exterminator</h3>
+            <p class="feature-desc">Extracts EXIF metadata, camera settings, author signatures, document creator revisions, and precise GPS coordinates.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">
+              <i data-lucide="key-round"></i>
+            </div>
+            <h3 class="feature-title">Credential Audit</h3>
+            <p class="feature-desc">Flags high-entropy strings, exposed passwords, private keys, AWS access tokens, Slack keys, and Bearer authorization tokens.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">
+              <i data-lucide="cpu"></i>
+            </div>
+            <h3 class="feature-title">Risk Scoring & Guidance</h3>
+            <p class="feature-desc">Calculates a consolidated security health index alongside instant AI generated remediation guides to sanitize data.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Stat Ticker -->
+      <section class="stats-ticker">
+        <div class="stat-item">
+          <div class="stat-value">1.2M+</div>
+          <div class="stat-label">Files Cleansed</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">99.9%</div>
+          <div class="stat-label">Scan Accuracy</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">&lt;1.8s</div>
+          <div class="stat-label">Scan Speed</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">0%</div>
+          <div class="stat-label">Data Retained</div>
+        </div>
+      </section>
+    </main>
+
+    <!-- PAGE 2: SCAN DASHBOARD PAGE -->
+    <main id="page-scan" class="page-view">
+      <div class="dashboard-layout">
+        
+        <!-- Left Panel: Actions & Scans -->
+        <div class="dashboard-panel-left">
+          
+          <!-- Upload Area Card -->
+          <div class="panel-card">
+            <div class="panel-title">
+              <div class="panel-title-text">
+                <i data-lucide="file-up" style="color: var(--cyan-accent);"></i>
+                <span>Ingest Engine</span>
+              </div>
+            </div>
+            <div class="upload-zone" id="drop-zone" onclick="document.getElementById('file-input').click()">
+              <i data-lucide="cloud-lightning" class="upload-icon"></i>
+              <div class="upload-text">Drop your file here</div>
+              <div class="upload-formats">PDF, DOCX, TXT, PNG, JPG</div>
+              <button class="btn-upload">Choose File</button>
+              <input type="file" id="file-input" accept=".txt,.json,.log,.csv,.pdf,.docx,.png,.jpg,.jpeg">
+            </div>
+          </div>
+
+          <!-- Audit Policy Configuration -->
+          <div class="panel-card">
+            <div class="panel-title">
+              <div class="panel-title-text">
+                <i data-lucide="shield-check" style="color: var(--success-green);"></i>
+                <span>Audit Policy</span>
+              </div>
+            </div>
+            <div class="policy-options-list" style="display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.85rem;">
+              <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer; user-select: none;">
+                <input type="checkbox" id="policy-pii" checked style="accent-color: var(--cyan-accent); cursor: pointer;">
+                <span>Scan for PII (Emails/Phones)</span>
+              </label>
+              <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer; user-select: none;">
+                <input type="checkbox" id="policy-keys" checked style="accent-color: var(--cyan-accent); cursor: pointer;">
+                <span>Scan Cloud Credentials</span>
+              </label>
+              <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer; user-select: none;">
+                <input type="checkbox" id="policy-exif" checked style="accent-color: var(--cyan-accent); cursor: pointer;">
+                <span>Scan EXIF Metadata</span>
+              </label>
+              <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer; user-select: none;">
+                <input type="checkbox" id="policy-custom" style="accent-color: var(--cyan-accent); cursor: pointer;" onchange="document.getElementById('custom-regex-wrapper').style.display = this.checked ? 'block' : 'none'">
+                <span>Custom RegEx Engine</span>
+              </label>
+              <div id="custom-regex-wrapper" style="display: none; margin-top: 0.25rem;">
+                <input type="text" id="policy-custom-regex" placeholder="e.g. \b[0-9]{4}-[0-9]{4}\b" style="width: 100%; background: rgba(0,0,0,0.2); border: 1px solid var(--glass-border); border-radius: 6px; padding: 0.35rem 0.5rem; font-family: monospace; font-size: 0.75rem; color: var(--text-white); outline: none;">
+              </div>
+            </div>
+          </div>
+
+
+          <!-- Recent Scans History -->
+          <div class="panel-card">
+            <div class="panel-title">
+              <div class="panel-title-text">
+                <i data-lucide="history" style="color: var(--primary-blue);"></i>
+                <span>Recent Audits</span>
+              </div>
+            </div>
+            <div class="recent-scans-list" id="recent-scans-container">
+              <!-- Dynamically populated or default samples -->
+            </div>
+          </div>
+          
+        </div>
+
+        <!-- Right Panel: Results & Audit -->
+        <div class="dashboard-panel-right">
+          
+          <!-- Loading / Scanning Overlay -->
+          <div class="scanner-overlay" id="scanner-overlay">
+            <div class="scanner-animation">
+              <div class="scanner-laser"></div>
+              <i data-lucide="file-digit" class="scanner-file-placeholder"></i>
+            </div>
+            <div class="scanner-progress-container">
+              <div class="scanner-progress-bar">
+                <div class="scanner-progress-fill" id="scanner-progress-fill"></div>
+              </div>
+              <div class="scanner-status-text" id="scanner-status-text">Initializing Sandbox Audit...</div>
+            </div>
+            <div class="scanner-console-log" id="scanner-console-log"></div>
+          </div>
+
+          <!-- Empty State (No file loaded) -->
+          <div class="dashboard-empty-state" id="dashboard-empty-state">
+            <i data-lucide="shield-ellipsis" class="empty-state-icon"></i>
+            <h3 class="empty-state-title">Audit Console Idle</h3>
+            <p class="empty-state-desc">Drag and drop a file or select one of our pre-loaded sample templates from the "Recent Audits" list to simulate a credential, PII, and EXIF metadata audit.</p>
+          </div>
+
+          <!-- Results Dashboard -->
+          <div class="dashboard-results" id="dashboard-results">
+            
+            <!-- Top Row: Risk Score + Summary -->
+            <div class="results-top-row">
+              
+              <!-- Risk Score Card -->
+              <div class="panel-card risk-score-card">
+                <div class="panel-title" style="width: 100%; border-bottom: none; padding-bottom: 0;">
+                  <span style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-secondary);">Threat Index</span>
+                </div>
+                <div class="gauge-wrapper">
+                  <svg class="gauge-svg">
+                    <circle class="gauge-bg" cx="70" cy="70" r="60"></circle>
+                    <circle class="gauge-fill" id="gauge-fill-arc" cx="70" cy="70" r="60"></circle>
+                  </svg>
+                  <div class="gauge-text">
+                    <span class="gauge-score" id="result-risk-score">0</span>
+                    <span class="gauge-max">/100</span>
+                  </div>
+                </div>
+                <span class="risk-level-label" id="result-risk-level">Calculating</span>
+              </div>
+
+              <!-- Detection Summary Grid -->
+              <div class="detection-summary-grid">
+                
+                <div class="summary-card summary-emails">
+                  <div class="summary-icon" style="background: rgba(59, 130, 246, 0.1);"><i data-lucide="mail"></i></div>
+                  <div class="summary-info">
+                    <span class="summary-label">Emails Found</span>
+                    <span class="summary-count" id="summary-count-emails">0</span>
+                    <span class="summary-status" id="summary-status-emails">No Risk</span>
+                  </div>
+                </div>
+
+                <div class="summary-card summary-phones">
+                  <div class="summary-icon" style="background: rgba(6, 182, 212, 0.1);"><i data-lucide="phone"></i></div>
+                  <div class="summary-info">
+                    <span class="summary-label">Phones Found</span>
+                    <span class="summary-count" id="summary-count-phones">0</span>
+                    <span class="summary-status" id="summary-status-phones">No Risk</span>
+                  </div>
+                </div>
+
+                <div class="summary-card summary-creds">
+                  <div class="summary-icon" style="background: rgba(239, 68, 68, 0.1);"><i data-lucide="key-round"></i></div>
+                  <div class="summary-info">
+                    <span class="summary-label">Exposed Keys</span>
+                    <span class="summary-count" id="summary-count-creds">0</span>
+                    <span class="summary-status" id="summary-status-creds">No Risk</span>
+                  </div>
+                </div>
+
+                <div class="summary-card summary-metadata">
+                  <div class="summary-icon" style="background: rgba(245, 158, 11, 0.1);"><i data-lucide="file-search"></i></div>
+                  <div class="summary-info">
+                    <span class="summary-label">EXIF Fields</span>
+                    <span class="summary-count" id="summary-count-metadata">0</span>
+                    <span class="summary-status" id="summary-status-metadata">Clean</span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Threat Distribution Chart Card -->
+            <div class="panel-card" id="threat-chart-card">
+              <div class="panel-title">
+                <div class="panel-title-text">
+                  <i data-lucide="bar-chart-3" style="color: var(--cyan-accent);"></i>
+                  <span>Threat Profile Breakdown</span>
+                </div>
+              </div>
+              <div class="chart-container" style="display: flex; flex-direction: column; gap: 1rem; padding: 0.5rem 0;">
+                <div class="chart-row" style="display: flex; align-items: center; gap: 1rem;">
+                  <span style="font-size: 0.85rem; width: 140px; color: var(--text-secondary);">Credentials (Critical)</span>
+                  <div style="flex-grow: 1; height: 12px; background: rgba(0,0,0,0.2); border: 1px solid var(--card-border); border-radius: 6px; overflow: hidden; position: relative;">
+                    <div id="chart-bar-critical" style="height: 100%; width: 0%; background: var(--danger-red); box-shadow: 0 0 8px var(--danger-glow); transition: width 1s ease-out;"></div>
+                  </div>
+                  <span id="chart-val-critical" style="font-size: 0.85rem; width: 30px; text-align: right; font-weight: 700; color: var(--danger-red);">0</span>
+                </div>
+                <div class="chart-row" style="display: flex; align-items: center; gap: 1rem;">
+                  <span style="font-size: 0.85rem; width: 140px; color: var(--text-secondary);">PII Violations</span>
+                  <div style="flex-grow: 1; height: 12px; background: rgba(0,0,0,0.2); border: 1px solid var(--card-border); border-radius: 6px; overflow: hidden; position: relative;">
+                    <div id="chart-bar-pii" style="height: 100%; width: 0%; background: var(--warning-orange); box-shadow: 0 0 8px var(--warning-glow); transition: width 1s ease-out;"></div>
+                  </div>
+                  <span id="chart-val-pii" style="font-size: 0.85rem; width: 30px; text-align: right; font-weight: 700; color: var(--warning-orange);">0</span>
+                </div>
+                <div class="chart-row" style="display: flex; align-items: center; gap: 1rem;">
+                  <span style="font-size: 0.85rem; width: 140px; color: var(--text-secondary);">EXIF / Location</span>
+                  <div style="flex-grow: 1; height: 12px; background: rgba(0,0,0,0.2); border: 1px solid var(--card-border); border-radius: 6px; overflow: hidden; position: relative;">
+                    <div id="chart-bar-exif" style="height: 100%; width: 0%; background: var(--primary-blue); box-shadow: 0 0 8px var(--primary-blue-glow); transition: width 1s ease-out;"></div>
+                  </div>
+                  <span id="chart-val-exif" style="font-size: 0.85rem; width: 30px; text-align: right; font-weight: 700; color: var(--primary-blue);">0</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sensitive Data Table Card -->
+            <div class="panel-card">
+              <div class="panel-title">
+                <div class="panel-title-text">
+                  <i data-lucide="alert-triangle" style="color: var(--danger-red);"></i>
+                  <span>Sensitive Data Findings</span>
+                </div>
+              </div>
+              <div class="data-table-container">
+                <table class="cyber-table">
+                  <thead>
+                    <tr>
+                      <th>Violation Type</th>
+                      <th>Detected Exposure Value</th>
+                      <th>Severity Index</th>
+                    </tr>
+                  </thead>
+                  <tbody id="findings-table-body">
+                    <!-- Dynamic findings -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Bottom Row: Metadata + AI Recommendations -->
+            <div class="results-bottom-row">
+              
+              <!-- Metadata Inspection Panel -->
+              <div class="panel-card">
+                <div class="panel-title">
+                  <div class="panel-title-text">
+                    <i data-lucide="file-json" style="color: var(--warning-orange);"></i>
+                    <span>Metadata (EXIF) Inspector</span>
+                  </div>
+                </div>
+                <div class="metadata-grid" id="metadata-inspector-grid">
+                  <!-- Dynamic metadata -->
+                </div>
+              </div>
+
+              <!-- Recommendation Panel -->
+              <div class="panel-card recs-container">
+                <div class="panel-title">
+                  <div class="panel-title-text">
+                    <i data-lucide="sparkles" style="color: var(--cyan-accent);"></i>
+                    <span>AI Security Guidance</span>
+                  </div>
+                </div>
+                <div class="rec-header" id="recommendation-badge-header">
+                  <i data-lucide="shield-alert" class="rec-header-icon"></i>
+                  <div class="rec-header-text">
+                    <span class="rec-header-title" id="recommendation-summary-title">Security Alert</span>
+                    <span class="rec-header-desc" id="recommendation-summary-desc">Analyzing threat posture...</span>
+                  </div>
+                </div>
+                <div class="rec-action-list" id="recommendations-action-list">
+                  <!-- Dynamic recommendation checklist -->
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Privacy Report Controls -->
+            <div class="report-actions-panel">
+              <button class="btn-primary" id="btn-sanitize-file" onclick="scanEngine.sanitizeCurrentFile()" style="background: linear-gradient(135deg, var(--success-green) 0%, var(--cyan-accent) 100%); box-shadow: 0 4px 15px var(--success-glow); margin-right: auto; display: none;">
+                <i data-lucide="shield-check" style="width: 14px; height: 14px; display: inline; vertical-align: middle;"></i> Strip & Sanitize File
+              </button>
+              <button class="btn-secondary" onclick="scanEngine.exportSummary()">
+                <i data-lucide="download" style="width: 14px; height: 14px; display: inline; vertical-align: middle;"></i> Export TXT Summary
+              </button>
+              <button class="btn-primary" onclick="scanEngine.generatePDFReport()">
+                <i data-lucide="file-pdf" style="width: 14px; height: 14px; display: inline; vertical-align: middle;"></i> Print PDF Audit Report
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- PAGE 3: ABOUT PAGE -->
+    <main id="page-about" class="page-view">
+      <div class="about-section">
+        <div class="about-header">
+          <h1>Zero-Trust File Integrity Architecture</h1>
+          <p>DataBison protects your private credentials, personal identifiers, and locations client-side.</p>
+        </div>
+
+        <div class="about-grid-2col">
+          <div class="about-card-left">
+            <h2 class="about-card-title">Why Data Exposure Matters</h2>
+            <p class="about-text">
+              Every day, files are shared containing hidden markers: GPS metadata detailing physical workspaces, private API keys tucked inside sample scripts, and phone numbers or personal emails that violate privacy compliance regulations (GDPR, HIPAA, CCPA). Hackers and automated scrapers actively monitor publicly uploaded data to harvest this metadata and hijack cloud infrastructure.
+            </p>
+            <h2 class="about-card-title">Zero-Server Execution Philosophy</h2>
+            <p class="about-text">
+              DataBison operates on a rigid <strong>zero-trust security model</strong>. Unlike traditional online tools that transmit your files to remote cloud servers for analysis, DataBison runs its entire scanner engine in the sandboxed perimeter of your local web browser. Your data never leaves your device. If you scan a log file with exposed secrets, those secrets are parsed locally, ensuring compliance and zero database logging.
+            </p>
+          </div>
+
+          <div class="about-image-card">
+            <h2 class="about-card-title" style="margin-bottom: 1rem;">System Integrity Engine</h2>
+            <div style="font-family: monospace; font-size: 0.8rem; background: rgba(0, 0, 0, 0.3); padding: 1rem; border-radius: 8px; border: 1px solid var(--glass-border); line-height: 1.6; color: #a5f3fc;">
+              <span style="color: var(--text-secondary);">// Client-Side Security Sandboxing</span><br>
+              &gt; Ingest File [local_filesystem]<br>
+              &gt; Spawn Browser Sandbox worker<br>
+              &gt; Load local scanning regular expressions<br>
+              &gt; Parse binary header headers<br>
+              &gt; Execute entropy analysis for secrets<br>
+              &gt; Strip EXIF blocks dynamically<br>
+              <span style="color: var(--success-green); font-weight: bold;">[SUCCESS] Audit Complete: 0 bytes uploaded</span>
+            </div>
+            <p class="about-text" style="margin-top: 1.5rem; font-size: 0.9rem;">
+              Our engine utilizes high-speed string matching, regular expression mapping, and image header parsing directly inside HTML5 JavaScript APIs, making the scanning process faster than network-based alternatives.
+            </p>
+          </div>
+        </div>
+
+        <!-- Future Scope Roadmap -->
+        <div class="roadmap-container">
+          <div class="section-header" style="margin-bottom: 2rem; text-align: left;">
+            <h2>Development Roadmap</h2>
+            <p>Our strategic expansion phases to build a unified security orchestration tool.</p>
+          </div>
+          <div class="roadmap-grid">
+            <div class="roadmap-card">
+              <div class="roadmap-phase">Phase 1</div>
+              <h3 class="roadmap-title">Browser Ingestion</h3>
+              <p class="roadmap-desc">High-speed client-side PII parsing, EXIF readout, and severity assessment indices (Active Release).</p>
+            </div>
+            <div class="roadmap-card">
+              <div class="roadmap-phase">Phase 2</div>
+              <h3 class="roadmap-title">On-Device AI Strip</h3>
+              <p class="roadmap-desc">Integrate on-device WebAssembly-based models to redact PII and rewrite code samples safely in-browser.</p>
+            </div>
+            <div class="roadmap-card">
+              <div class="roadmap-phase">Phase 3</div>
+              <h3 class="roadmap-title">Continuous Integration</h3>
+              <p class="roadmap-desc">Git hooks and webhook listeners to reject code commits that expose credentials or credentials signatures.</p>
+            </div>
+            <div class="roadmap-card">
+              <div class="roadmap-phase">Phase 4</div>
+              <h3 class="roadmap-title">Enterprise Dashboard</h3>
+              <p class="roadmap-desc">Decentralized logging systems that aggregate audit scores across company file shares without storing raw data.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <span class="footer-brand">🦬 DataBison Security</span>
+        <span class="Developer">Engine: Mark 4.0.0 | Developer: Shubham Yadav</span>
+        <span class="footer-text">&copy; 2026 DataBison. Zero-Trust File Security. All rights reserved.</span>
+        <ul class="footer-links">
+            <li><a href="#" onclick="appRouter.navigate('about')">About</a></li>
+            <li><a href="#" onclick="appRouter.navigate('scan')">Console</a></li>
+            <li><a href="https://github.com/shubhamgit02" target="_blank">GitHub</a></li>
+        </ul>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Main Application Script -->
+  <script src="app.js"></script>
+</body>
+</html>
